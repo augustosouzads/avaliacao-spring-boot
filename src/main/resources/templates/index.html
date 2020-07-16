@@ -16,7 +16,7 @@
 			<div class="card-body">
 				<div th:switch="${estudantes}" class="container my-5">
 					<p class="my-5">
-						<a href="/estudantes/criar" class="btn btn-primary"><i class="fas fa-user-plus ml-2"> Adicionar Estudante</i></a>
+						<a href="/criar" class="btn btn-primary"><i class="fas fa-user-plus ml-2"> Adicionar Estudante</i></a>
 					</p>
 					<div class="col-md-10">
 						<h2 th:case="null">Nenhum estudante cadastrado</h2>
@@ -26,7 +26,10 @@
 									<tr>
 										<th>Nome</th>
 										<th>Email</th>
+										<th>DDD</th>
 										<th>Telefone</th>
+										<th>Matricula</th>
+										<th>Curso</th>
 										<th>Editar</th>
 										<th>Apagar</th>
 									</tr>
@@ -35,9 +38,12 @@
 									<tr th:each="estudante : ${estudantes}">
 										<td th:text="${estudante.nome}"></td>
 										<td th:text="${estudante.email}"></td>
-										<td th:text="${estudante.telefone}"></td>
-										<td><a th:href="@{/estudantes/editar/{id}(id=${estudante.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
-										<td><a th:href="@{/estudantes/apagar/{id}(id=${estudante.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+										<td th:text="${estudante.telefone.ddd}"></td>
+										<td th:text="${estudante.telefone.numero}"></td>
+										<td th:text="${estudante.curso.matricula}"></td>
+										<td th:text="${estudante.curso.nomeDoCurso}"></td>
+										<td><a th:href="@{/editar/{id}(id=${estudante.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+										<td><a th:href="@{/apagar/{id}(id=${estudante.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
 									</tr>
 								</tbody>
 							</table>

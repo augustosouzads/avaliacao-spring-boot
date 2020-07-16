@@ -15,7 +15,7 @@ import br.com.tokiomarine.seguradora.avaliacao.entidade.Estudante;
 import br.com.tokiomarine.seguradora.avaliacao.service.EstudanteService;
 
 @Controller
-@RequestMapping("/estudantes/")
+@RequestMapping("/")
 public class EstudanteController {
 
 	// TODO efetue a correção dos problemas que existem na classe Estudante Controller
@@ -27,9 +27,9 @@ public class EstudanteController {
 		return "cadastrar-estudante";
 	}
 
-	@GetMapping("listar")
+	@GetMapping()
 	public String listarEstudantes(Model model) {
-		model.addAttribute("estudtes", service.buscarEstudantes());
+		model.addAttribute("estudantes", service.buscarEstudantes());
 		return "index";
 	}
 
@@ -41,18 +41,18 @@ public class EstudanteController {
 
 		service.cadastrarEstudante(estudante);
 
-		return "redirect:listar";
+		return "redirect:index";
 	}
 
 	@GetMapping("editar/{id}")
-	public String exibirEdicaoEstudante(long id, Model model) {
+	public String exibirEdicaoEstudante(@PathVariable("id") Long id, Model model) {
 		Estudante estudante = service.buscarEstudante(id);
 		model.addAttribute("estudante", estudante);
 		return "atualizar-estudante";
 	}
 
 	@PostMapping("atualizar/{id}")
-	public String atualizarEstudante(@PathVariable("id") long id, @Valid Estudante estudante, BindingResult result, Model model) {
+	public String atualizarEstudante(@PathVariable("id") Long id, @Valid Estudante estudante, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			// estudante.setId(id);
 			return "atualizar-estudante";
@@ -65,8 +65,8 @@ public class EstudanteController {
 	}
 
 	@GetMapping("apagar/{id}")
-	public String apagarEstudante(@PathVariable("id") long id, Model model) {
-		// TODO IMPLEMENTAR A EXCLUSAO DE ESTUDANTES
+	public String apagarEstudante(@PathVariable("id") Long id, Model model) {
+		service.deletarEstudantes(id);
 		model.addAttribute("estudantes", service.buscarEstudantes());
 		return "index";
 	}

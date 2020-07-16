@@ -20,7 +20,7 @@
 		<div class="card">
 			<div class="card-body">
 				<div class="col-md-10">
-					<form action="#" th:action="@{/estudantes/add}"
+					<form action="@{/add}" th:action="@{/add}"
 						th:object="${estudante}" method="post">
 						<div class="row">
 							<div class="form-group col-md-8">
@@ -37,17 +37,49 @@
 									th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
 									class="text-danger"></span>
 							</div>
+							
+							<div class="form-group col-md-8">
+								<label for="telefone.ddd" class="col-form-label">DDD</label> <input
+									type="text" th:field="*{telefone.ddd}" class="form-control"
+									id="telefone.ddd" placeholder="Telefone.ddd"> <span
+									th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"
+									class="text-danger"></span>
+							</div>
 
 							<div class="form-group col-md-8">
+								<label for="telefone.numero" class="col-form-label">Telefone</label> <input
+									type="text" th:field="*{telefone.numero}" class="form-control"
+									id="telefone.numero" placeholder="Telefone.numero"> <span
+									th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"
+									class="text-danger"></span>
+							</div>
+							
+							<!--  <div class="form-group col-md-8">
 								<label for="telefone" class="col-form-label">Telefone</label> <input
 									type="text" th:field="*{telefone}" class="form-control"
 									id="telefone" placeholder="Telefone"> <span
 									th:if="${#fields.hasErrors('telefone')}" th:errors="*{telefone}"
 									class="text-danger"></span>
+							</div>-->
+							
+							<div class="form-group col-md-8">
+								<label for="curso.nomeDoCusro" class="col-form-label">Cusro</label> <input
+									type="text" th:field="*{curso.nomeDoCurso}" class="form-control"
+									id="curso.nomeDoCusro" placeholder="curso.nomeDoCusro"> <span
+									th:if="${#fields.hasErrors('curso')}" th:errors="curso.nomeDoCusro"
+									class="text-danger"></span>
+							</div>
+							
+							<div class="form-group col-md-8">
+								<label for="curso.matricula" class="col-form-label">Matricula</label> <input
+									type="text" th:field="*{curso.matricula}" class="form-control"
+									id="curso.matricula" placeholder="curso.matricula"> <span
+									th:if="${#fields.hasErrors('curso')}" th:errors="curso.matricula"
+									class="text-danger"></span>
 							</div>
 
 							<div class="col-md-6">
-								<input type="button" class="btn btn-primary" value="Adicionar Estudante">
+								<input type="submit" class="btn btn-primary" value="Adicionar Estudante">
 							</div>
 							
 							<div class="form-group col-md-8"></div>
