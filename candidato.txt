@@ -1,4 +1,11 @@
 Nome: Augusto de Souza
 Data: 15/07/2020
-SQL:
-INSERT INTO TELEFONE  ("DDD","NUMERO") VALUES ('111','947230796');
+
+
+Obs:Este projeto esta utilizando Banco de dados em memória(H2)
+
+Implementado apenas o Back-End em formato Rest. 
+
+Postman Collections: ./tokiomarine teste.postman_collection.json
+ 
+

@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "36169ad4-a883-49ac-aa73-66846cae59de",
+		"name": "tokiomarine teste",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cadastrarEstudante",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n        \"nome\": \"Xawoy\",\n        \"email\": \"xawoy@tms.com.br\",\n        \"telefone\": {\n            \"ddd\": 11,\n            \"numero\": 7777\n        },\n        \"curso\": {\n            \"nomeDoCurso\": \"Engenharia da Computação\",\n            \"matricula\": 123456\n        }\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/estudantes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"estudantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarEstudantes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/estudantes",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"estudantes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deletarEstudante",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/estudantes/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"estudantes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarEstudantePeloId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8081/v1/estudantes/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"estudantes",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "atualizarEstudante",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"nome\": \"Augusto\",\n        \"email\": \"email@gmail.com\",\n        \"telefone\":{    \n                \"ddd\":12,\n                \"numero\": 947230796\n                } \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8081/v1/estudantes/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"v1",
+						"estudantes",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "98efc9ff-31c3-4baa-a06b-bc758f62f64d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bf9f1c48-7cd1-44aa-91f5-d25906ca7d01",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

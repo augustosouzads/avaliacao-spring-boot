@@ -40,5 +40,8 @@ public class Estudante {
 	@Valid
 	private Telefone telefone;
 	
+	@Embedded
+	@Valid
+	private Curso curso;
 	
 }

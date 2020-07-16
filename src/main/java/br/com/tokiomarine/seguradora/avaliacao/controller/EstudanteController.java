@@ -15,7 +15,7 @@ import br.com.tokiomarine.seguradora.avaliacao.entidade.Estudante;
 import br.com.tokiomarine.seguradora.avaliacao.service.EstudanteService;
 
 @Controller
-@RequestMapping("/v1/web/estudantes")
+@RequestMapping("/estudantes/")
 public class EstudanteController {
 
 	// TODO efetue a correção dos problemas que existem na classe Estudante Controller
