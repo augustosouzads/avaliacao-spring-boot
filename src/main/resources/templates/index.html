@@ -9,12 +9,15 @@
 					integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"	crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css"
 					integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+					
+	<h2><center>Bem vindo à Tokio Marine</h2>					
 </head>
 <body>
 	<div class="container my-2">
-		<div class="card">
+	  	<div class="card">
 			<div class="card-body">
-				<div th:switch="${estudantes}" class="container my-5">
+			  <h2>Inicio</h2>					
+			  	<div th:switch="${estudantes}" class="container my-5">
 					<p class="my-5">
 						<a href="/criar" class="btn btn-primary"><i class="fas fa-user-plus ml-2"> Adicionar Estudante</i></a>
 					</p>

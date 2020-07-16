@@ -61,13 +61,13 @@ public class EstudanteController {
 		service.atualizarEstudante(estudante);
 
 		model.addAttribute("estudantes", service.buscarEstudantes());
-		return "index";
+		return "atualizado";
 	}
 
 	@GetMapping("apagar/{id}")
 	public String apagarEstudante(@PathVariable("id") Long id, Model model) {
 		service.deletarEstudantes(id);
-		model.addAttribute("estudantes", service.buscarEstudantes());
-		return "index";
+		//model.addAttribute("estudantes", service.buscarEstudantes());
+		return "deletado";
 	}
 }
