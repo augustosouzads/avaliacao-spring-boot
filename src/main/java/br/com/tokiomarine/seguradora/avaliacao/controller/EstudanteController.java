@@ -41,7 +41,7 @@ public class EstudanteController {
 
 		service.cadastrarEstudante(estudante);
 
-		return "redirect:index";
+		return "redirect:";
 	}
 
 	@GetMapping("editar/{id}")
@@ -54,10 +54,10 @@ public class EstudanteController {
 	@PostMapping("atualizar/{id}")
 	public String atualizarEstudante(@PathVariable("id") Long id, @Valid Estudante estudante, BindingResult result, Model model) {
 		if (result.hasErrors()) {
-			// estudante.setId(id);
 			return "atualizar-estudante";
 		}
 
+        estudante.setId(id);
 		service.atualizarEstudante(estudante);
 
 		model.addAttribute("estudantes", service.buscarEstudantes());
